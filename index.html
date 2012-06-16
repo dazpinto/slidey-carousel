@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Slidey Carousel Demo Page</title>
+	<script src="vendor/jquery-1.7.2.min.js"></script>
+	<script src="slidey.js"></script>
+	<script>
+		$(function() {
+			$('#scroll_list').slidey();
+		});
+	</script>
+	<style>
+		#scroll_list{
+			margin: 0;
+			padding: 0;
+		}
+		#scroll_list li{
+			margin: 0;
+			padding: 0;
+			display: block;
+			height: 200px;
+			width: 250px;
+			background: #cdcdcd;
+		}
+	</style>
+</head>
+<body>
+	<ul id="scroll_list">
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+		<li>Item 4</li>
+		<li>Item 5</li>
+		<li>Item 6</li>
+	</ul>
+</body>
+</html>
