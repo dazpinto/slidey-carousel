@@ -7,34 +7,138 @@
 	<script src="slidey.js"></script>
 	<script>
 		$(function() {
-			$('#scroll_list').slidey({elements_displayed: 2});
+			$('#default_options').slidey();
+			$('ul#unordered_list').slidey({display: 2});
+			$('ul#custom_buttons').slidey({previous_button: '#custom_previous', next_button: '#custom_next'});
 		});
 	</script>
-	<style>
-		#scroll_list{
+	<style type="text/css">
+		*{
+			font-family: sans-serif;
+		}
+		body{
+			background-image: linear-gradient(bottom, rgb(157,158,163) 12%, rgb(235,235,235) 56%, rgb(232,232,232) 80%);
+			background-image: -o-linear-gradient(bottom, rgb(157,158,163) 12%, rgb(235,235,235) 56%, rgb(232,232,232) 80%);
+			background-image: -moz-linear-gradient(bottom, rgb(157,158,163) 12%, rgb(235,235,235) 56%, rgb(232,232,232) 80%);
+			background-image: -webkit-linear-gradient(bottom, rgb(157,158,163) 12%, rgb(235,235,235) 56%, rgb(232,232,232) 80%);
+			background-image: -ms-linear-gradient(bottom, rgb(157,158,163) 12%, rgb(235,235,235) 56%, rgb(232,232,232) 80%);
+			background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.12, rgb(157,158,163)),color-stop(0.56, rgb(235,235,235)),color-stop(0.8, rgb(232,232,232)));
+		}
+		#container{
+			width: 700px;
+			background: white;
+			padding: 20px 10px;
+			margin: 0 auto;
+		}
+		div.code{
+			font-family: monospace;
+			background: #dbdbdb;
+			padding: 10px 5px;
+			margin: 10px 0;
+		}
+		div.code h3{
+			font-size: 100%;
+			font-weight: bold;
+			margin: 0 0 5px 0;
+			padding: 0;
+		}
+		.slidey_control{
+			margin-right: 10px;
+		}
+		#default_options{
+			border: 1px solid #1a00b2;
+		}
+		#default_options p{
+			width: 700px;
+			text-align: center;
+		}
+		#unordered_list, #custom_buttons{
 			margin: 0;
 			padding: 0;
 		}
-		#scroll_list li{
+		#unordered_list li, #custom_buttons li{
 			margin: 0;
 			padding: 0;
 			display: block;
-			height: 200px;
+			height: 100px;
 			width: 250px;
-			background: #cdcdcd;
 		}
+
+		#custom_buttons li{
+			font-size: 150px;
+			text-align: center;
+			height: 180px;
+			border: 1px solid silver;
+			margin-top: 20px;
+		}
+
+		#custom_next, #custom_previous{
+			padding: 5px 10px;
+			display: inline;
+			border: 1px solid black;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+			background-image: linear-gradient(bottom, rgb(133,133,133) 12%, rgb(186,186,186) 56%, rgb(217,217,217) 80%);
+			background-image: -o-linear-gradient(bottom, rgb(133,133,133) 12%, rgb(186,186,186) 56%, rgb(217,217,217) 80%);
+			background-image: -moz-linear-gradient(bottom, rgb(133,133,133) 12%, rgb(186,186,186) 56%, rgb(217,217,217) 80%);
+			background-image: -webkit-linear-gradient(bottom, rgb(133,133,133) 12%, rgb(186,186,186) 56%, rgb(217,217,217) 80%);
+			background-image: -ms-linear-gradient(bottom, rgb(133,133,133) 12%, rgb(186,186,186) 56%, rgb(217,217,217) 80%);
+			background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.12, rgb(133,133,133)),color-stop(0.56, rgb(186,186,186)),color-stop(0.8, rgb(217,217,217))
+			);
+		}
+
 	</style>
 </head>
 <body>
-	<ul id="scroll_list">
-		<li>Item 1</li>
-		<li>Item 2</li>
-		<li>Item 3</li>
-		<li>Item 4</li>
-		<li>Item 5</li>
-		<li>Item 6</li>
-	</ul>
-	<p id="next">Next</p>
-	<p id="prev">Prev</p>
+	<div id="container">
+		<h1>Slidey Carousel Demo Page</h1>
+
+		<h2>Default Options</h2>
+		<div id="default_options">
+			<p>Slidey carousel works with all different elements</p>
+			<p>The only limitation is that all elements must be the same width (This is to keep the plugin lightweight)</p>
+			<p>Elements' widths should be styled using css</p>
+		</div>
+		<div class="code">
+			<h3>Code:</h3>
+			$('#default_options').slidey();
+		</div>
+
+		<h2>Choosing how many elements to display</h2>
+		<ul id="unordered_list">
+			<li style="background: red;">Item 1</li>
+			<li style="background: orange;">Item 2</li>
+			<li style="background: yellow;">Item 3</li>
+			<li style="background: green;">Item 4</li>
+			<li style="background: blue;">Item 5</li>
+			<li style="background: indigo;">Item 6</li>
+			<li style="background: violet;">Item 6</li>
+		</ul>
+		<div class="code">
+			<h3>Code:</h3>
+			$('ul#unordered_list').slidey({<br />&nbsp;&nbsp;display: 2<br />});
+		</div>
+
+		<h2>Using custom previous/next buttons</h2>
+		<p id="custom_previous">This is a custom previous button</p>
+		<a href="#" id="custom_next">This is a custom next button</a>
+		<ul id="custom_buttons">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+
+		<div class="code">
+			<h3>Code:</h3>
+			$('ul#custom_buttons').slidey({<br />&nbsp;&nbsp;previous_button: '#custom_previous', <br />&nbsp;&nbsp;next_button: '#custom_next'<br />});
+		</div>
+	</div>
 </body>
 </html>
