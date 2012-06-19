@@ -10,7 +10,8 @@
         'element_height' : children.first().height(),
         'display': 1,
         'next_button' : null,
-        'previous_button' : null
+        'previous_button' : null,
+        'loop' : true
       }, options);
 
       var full_width = children.length * settings.element_width;
@@ -44,7 +45,7 @@
 
       prev_button.click(function(e){
         e.preventDefault();
-        if ($(target).scrollLeft() == 0){
+        if (settings.loop && ($(target).scrollLeft() == 0)){
           $(target).animate({scrollLeft:full_width},settings.speed)
         }else{
           $(target).animate({scrollLeft:"-="+settings.element_width},settings.speed)
@@ -53,7 +54,7 @@
 
       next_button.click(function(e){
         e.preventDefault();
-        if ($(target).scrollLeft() == max_scroll){
+        if (settings.loop && ($(target).scrollLeft() == max_scroll)){
           $(target).animate({scrollLeft: 0},settings.speed);
         }else{
           $(target).animate({scrollLeft:"+="+settings.element_width},settings.speed);
