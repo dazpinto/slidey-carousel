@@ -7,7 +7,7 @@
 	<script src="slidey.js"></script>
 	<script>
 		$(function() {
-			$('#scroll_list').slidey({elements_displayed: 2});
+			$('#scroll_list').slidey({elements_displayed: 2, next_button: '#next', previous_button: '#prev'});
 		});
 	</script>
 	<style>
@@ -34,5 +34,7 @@
 		<li>Item 5</li>
 		<li>Item 6</li>
 	</ul>
+	<p id="next">Next</p>
+	<p id="prev">Prev</p>
 </body>
 </html>
