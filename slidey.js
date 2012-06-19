@@ -15,8 +15,8 @@
       }, options);
 
       var full_width = children.length * settings.element_width;
-      var carousel_width = settings.elements_displayed * settings.element_width;
-      var max_scroll = ((children.length - settings.elements_displayed) * settings.element_width);
+      var carousel_width = settings.display * settings.element_width;
+      var max_scroll = ((children.length - settings.display) * settings.element_width);
 
       target
         .children()
