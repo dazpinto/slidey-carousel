@@ -14,14 +14,17 @@
       }, options);
 
       var full_width = children.length * settings.element_width;
+      console.log(settings.element_width);
+      console.log(full_width);
       var carousel_width = settings.display * settings.element_width;
       var max_scroll = ((children.length - settings.display) * settings.element_width);
 
       target
         .children()
           .css('float','left')
-          .width(settings.element_width)
+          .width(children.first().width())
           .wrapAll($('<div />').width(full_width))
+          .css('float','left')
       .end()
       .css('overflow','hidden')
       .width(carousel_width);
