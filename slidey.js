@@ -28,29 +28,19 @@
       .width(carousel_width)
       .height(settings.element_height);
 
-      var prev_button;
       var next_button;
-
-      if (settings.previous_button){
-        prev_button = $(settings.previous_button);
-      }else{
-        prev_button = $('<a href="#" class="slidey_previous">Previous</a>').appendTo(target.parent());
-      }
-
       if (settings.next_button){
         next_button = $(settings.next_button);
       }else{
-        next_button = $('<a href="#" class="slidey_next">Next</a>').appendTo(target.parent());
+        next_button = $('<a href="#" class="slidey_next">Next</a>').insertAfter(target);
       }
 
-      prev_button.click(function(e){
-        e.preventDefault();
-        if (settings.loop && ($(target).scrollLeft() == 0)){
-          $(target).animate({scrollLeft:full_width},settings.speed)
-        }else{
-          $(target).animate({scrollLeft:"-="+settings.element_width},settings.speed)
-        }
-      });
+      var prev_button;
+      if (settings.previous_button){
+        prev_button = $(settings.previous_button);
+      }else{
+        prev_button = $('<a href="#" class="slidey_previous">Previous</a>').insertAfter(target);
+      }
 
       next_button.click(function(e){
         e.preventDefault();
@@ -58,6 +48,15 @@
           $(target).animate({scrollLeft: 0},settings.speed);
         }else{
           $(target).animate({scrollLeft:"+="+settings.element_width},settings.speed);
+        }
+      });
+
+      prev_button.click(function(e){
+        e.preventDefault();
+        if (settings.loop && ($(target).scrollLeft() == 0)){
+          $(target).animate({scrollLeft:full_width},settings.speed)
+        }else{
+          $(target).animate({scrollLeft:"-="+settings.element_width},settings.speed)
         }
       });
     });
