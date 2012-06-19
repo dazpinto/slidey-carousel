@@ -4,11 +4,11 @@
 	<meta charset="utf-8">
 	<title>Slidey Carousel Demo Page</title>
 	<script src="vendor/jquery-1.7.2.min.js"></script>
-	<script src="slidey.js"></script>
+	<script src="jquery.slidey.js"></script>
 	<script>
 		$(function() {
 			$('#default_options').slidey();
-			$('ul#unordered_list').slidey({display: 2});
+			$('ul#unordered_list').slidey({display: 4});
 			$('ul#custom_buttons').slidey({previous_button: '#custom_previous', next_button: '#custom_next'});
 		});
 	</script>
@@ -61,13 +61,14 @@
 			padding: 0;
 			display: block;
 			height: 100px;
-			width: 250px;
+			width: 175px;
 		}
 
 		#custom_buttons li{
 			font-size: 150px;
 			text-align: center;
 			height: 180px;
+			width: 250px;
 			border: 1px solid silver;
 			margin-top: 20px;
 		}
@@ -107,17 +108,18 @@
 
 		<h2>Choosing how many elements to display</h2>
 		<ul id="unordered_list">
-			<li style="background: red;">Item 1</li>
-			<li style="background: orange;">Item 2</li>
-			<li style="background: yellow;">Item 3</li>
-			<li style="background: green;">Item 4</li>
-			<li style="background: blue;">Item 5</li>
-			<li style="background: indigo;">Item 6</li>
-			<li style="background: violet;">Item 6</li>
+			<li style="background: #000;"><!----></li>
+			<li style="background: #222;"><!----></li>
+			<li style="background: #444;"><!----></li>
+			<li style="background: #666;"><!----></li>
+			<li style="background: #BBB;"><!----></li>
+			<li style="background: #CCC;"><!----></li>
+			<li style="background: #DDD;"><!----></li>
+			<li style="background: #EEE;"><!----></li>
 		</ul>
 		<div class="code">
 			<h3>Code:</h3>
-			$('ul#unordered_list').slidey({<br />&nbsp;&nbsp;display: 2<br />});
+			$('ul#unordered_list').slidey({<br />&nbsp;&nbsp;display: 4<br />});
 		</div>
 
 		<h2>Using custom previous/next buttons</h2>
