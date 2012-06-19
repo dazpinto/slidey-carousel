@@ -6,8 +6,7 @@
 
       var settings = $.extend( {
         'speed'  : 500,
-        'element_width'  : children.first().width(),
-        'element_height' : children.first().height(),
+        'element_width'  : children.first().outerWidth(),
         'display': 1,
         'next_button' : null,
         'previous_button' : null,
@@ -25,8 +24,7 @@
           .wrapAll($('<div />').width(full_width))
       .end()
       .css('overflow','hidden')
-      .width(carousel_width)
-      .height(settings.element_height);
+      .width(carousel_width);
 
       var next_button;
       if (settings.next_button){
