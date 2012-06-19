@@ -30,14 +30,14 @@
       if (settings.next_button){
         next_button = $(settings.next_button);
       }else{
-        next_button = $('<a href="#" class="slidey_next">Next</a>').insertAfter(target);
+        next_button = $('<a href="#" class="slidey_control next">Next</a>').insertAfter(target);
       }
 
       var prev_button;
       if (settings.previous_button){
         prev_button = $(settings.previous_button);
       }else{
-        prev_button = $('<a href="#" class="slidey_previous">Previous</a>').insertAfter(target);
+        prev_button = $('<a href="#" class="slidey_control previous">Previous</a>').insertAfter(target);
       }
 
       next_button.click(function(e){
