@@ -1,3 +1,8 @@
+/*
+  Slidey Carousel 
+  https://github.com/dazpinto/slidey-carousel
+*/
+
 (function( $ ) {
   $.fn.slidey = function(options) {
     return this.each(function() {
